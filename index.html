@@ -18,7 +18,6 @@
             line-height: 1.8;
         }
 
-        /* 顶部背景图（你提供的高清图） */
         .hero {
             width: 100%;
             height: 500px;
@@ -82,7 +81,6 @@
             margin-bottom: 40px;
         }
 
-        /* 五大特点卡片 */
         .features {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -109,7 +107,7 @@
             margin-bottom: 10px;
         }
 
-        /* 皮肤切换 */
+        /* 皮肤切换按钮 */
         .theme-tabs {
             display: flex;
             flex-wrap: wrap;
@@ -139,11 +137,13 @@
         .tab-stylec { background: #2d3748; color: #fff; }
         .tab-styled { background: #fceeff; color: #222; }
 
-        /* 截图展示 */
+        /* 截图区域 —— 已缩小尺寸 */
         .screenshots {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .shot {
@@ -156,7 +156,10 @@
         .shot img {
             width: 100%;
             height: auto;
+            max-height: 460px;
+            object-fit: contain;
             display: block;
+            background: #f8f9fa;
         }
 
         .shot .name {
@@ -219,7 +222,7 @@
 
 <div class="container">
 
-    <!-- 重点宣传文案 -->
+    <!-- 软件介绍 -->
     <div class="card">
         <h2 class="title">📦 软件介绍</h2>
         <p style="font-size: 17px;">
@@ -228,7 +231,7 @@
         </p>
     </div>
 
-    <!-- 五大核心特点（卡片展示） -->
+    <!-- 五大核心特点 -->
     <h2 class="title">✨ 五大核心特点</h2>
     <div class="features">
         <div class="feature">
@@ -253,7 +256,7 @@
         </div>
     </div>
 
-    <!-- 多皮肤切换系统（你给的4张真实截图） -->
+    <!-- 多皮肤切换 + 已改相对路径 -->
     <div class="card">
         <h2 class="title">🎨 多主题皮肤切换</h2>
         <div class="theme-tabs">
@@ -263,28 +266,24 @@
             <div class="theme-tab tab-styled" data-target="styled">🟣 风格 D</div>
         </div>
 
-        <!-- 风格A -->
         <div class="screenshots shot-group active" id="stylea">
             <div class="shot">
-                <img src="https://raw.githubusercontent.com/xinty-tech/WinBIT/fd1569a673b2f5a7eae3a31b0b912d81721244f4/imgs/stylea.png" alt="风格A">
+                <img src="imgs/stylea.png" alt="风格A">
                 <div class="name">主题风格 A</div>
             </div>
         </div>
-        <!-- 风格B -->
         <div class="screenshots shot-group" id="styleb">
             <div class="shot">
-                <img src="https://raw.githubusercontent.com/xinty-tech/WinBIT/fd1569a673b2f5a7eae3a31b0b912d81721244f4/imgs/styleb.png" alt="风格B">
+                <img src="imgs/styleb.png" alt="风格B">
                 <div class="name">主题风格 B</div>
             </div>
         </div>
-        <!-- 风格C -->
         <div class="screenshots shot-group" id="stylec">
             <div class="shot">
-                <img src="https://raw.githubusercontent.com/xinty-tech/WinBIT/fd1569a673b2f5a7eae3a31b0b912d81721244f4/imgs/stylec.png" alt="风格C">
+                <img src="imgs/stylec.png" alt="风格C">
                 <div class="name">主题风格 C</div>
             </div>
         </div>
-        <!-- 风格D -->
         <div class="screenshots shot-group" id="styled">
             <div class="shot">
                 <img src="imgs/styled.png" alt="风格D">
@@ -293,16 +292,17 @@
         </div>
     </div>
 
-    <!-- 官方资源按钮 -->
+    <!-- 官方资源 -->
     <div class="card">
         <h2 class="title">🔗 官方资源</h2>
         <div class="link-group">
             <a href="https://docs.qq.com/doc/DR3JmYkRzdEFqaHVV" target="_blank" class="btn">📖 在线文档</a>
             <a href="https://www.bilibili.com/video/BV1W8QMBxEsC" target="_blank" class="btn">🎬 B站教程</a>
+            <a href="https://www.123865.com/s/9G4uVv-88ob3?pwd=RqVK" target="_blank" class="btn">📥 网盘下载</a>
         </div>
     </div>
 
-    <!-- 下载按钮 -->
+    <!-- 下载 -->
     <div class="download">
         <a href="https://www.123865.com/s/9G4uVv-88ob3?pwd=RqVK" target="_blank" class="btn btn-big">✅ 立即下载 WinBit 最新版</a>
     </div>
@@ -314,7 +314,6 @@
 </div>
 
 <script>
-    // 皮肤切换功能
     const tabs = document.querySelectorAll('.theme-tab');
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
